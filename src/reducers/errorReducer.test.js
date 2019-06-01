@@ -12,10 +12,10 @@ describe('errorReducer', () => {
 
   it('should set an error in state tree ', () => {
     const error = 'error';
-    const action = actions.setError(error);
+    const action = actions.setError('error');
     const expected = 'error';
     const result = errorReducer(error, action);
 
-    expect(result).toEqual(result);
+    expect(result).toEqual(expected);
   });
 });
