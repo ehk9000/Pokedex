@@ -9,7 +9,7 @@ export const fetchPokemon = () => {
       const response = await fetch(url);
 
       if (!response.ok) {
-        throw error(response.statusText);
+        throw Error(response.statusText);
       }
 
       const pokemon = await response.json();
