@@ -2,16 +2,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
+import PokemonDetails from '../../components/PokemonDetails/PokemonDetails';
 
 export class PokemonContainer extends Component {
    componentDidMount() {
      this.props.fetchPokemon();
    }
+
+   assignDisplayPokemon = () => {
+     let { pokemon } = this.props
+     let displayPokemon;
+
+     if(pokemon.length) {
+       displayPokemon = pokemon.map(pokemon => 
+         <PokemonDetails {...pokemon} key={pokemon.id} />
+       );
+     }
+
+     return displayPokemon
+   }
    
   render() {
+    const displayPokemon = this.assignDisplayPokemon()
     return (
       <main>
-  
+        {displayPokemon}
       </main>
     )
   }
@@ -19,7 +34,7 @@ export class PokemonContainer extends Component {
 
 export const mapStateToProps = ({ pokemon }) => ({
   pokemon
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   fetchPokemon: () => dispatch(fetchPokemon())
