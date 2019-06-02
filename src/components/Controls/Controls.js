@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 export const Controls = () => {
   return (
     <section>
-      <Route exact path='/' component={PokemonContainer} />
+      {/* <Route exact path='/' component={PokemonContainer} /> */}
     </section>
   )
 }
