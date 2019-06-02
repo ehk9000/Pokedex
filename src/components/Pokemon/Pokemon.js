@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
 
-export const PokemonDetails = (props) => {
+export const Pokemon = (props) => {
   let { name, sprites, types} = props;
   return (
     <article>
@@ -13,4 +13,4 @@ export const PokemonDetails = (props) => {
   )
 }
 
-export default PokemonDetails;
+export default Pokemon;

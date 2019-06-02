@@ -8,11 +8,27 @@ jest.mock("../../thunks/fetchPokemon");
 describe('PokemonContainer', () => {
   let wrapper;
   let mockLocation;
+  let mockPokemon = {
+    name: 'pikachu',
+    type: 'electric',
+    sprites: {
+      front_default: 'something.png'
+    },
+    types: [
+      {
+        type: {
+          name: 'electric'
+        }
+      }
+    ],
+    id: 25
+  }
   beforeEach(() => {
     mockLocation = { pathname: '/'};
     wrapper = shallow( <PokemonContainer 
       fetchPokemon={fetchPokemon}
-      location={mockLocation}/> )
+      location={mockLocation}
+      pokemon={mockPokemon}/> )
   });
 
   it('should render correctly', () => {

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
-import PokemonDetails from '../../components/PokemonDetails/PokemonDetails';
+import Pokemon from '../../components/Pokemon/Pokemon';
 
 export class PokemonContainer extends Component {
    componentDidMount() {
@@ -15,7 +15,7 @@ export class PokemonContainer extends Component {
 
      if(pokemon.length) {
        displayPokemon = pokemon.map(pokemon => 
-         <PokemonDetails {...pokemon} key={pokemon.id} />
+         <Pokemon {...pokemon} key={pokemon.id} />
        );
      }
 
