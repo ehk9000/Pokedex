@@ -14,8 +14,9 @@ export class PokemonContainer extends Component {
      let displayPokemon;
 
      if(pokemon.length) {
-       displayPokemon = pokemon.map(pokemon => 
-         <Pokemon {...pokemon} key={pokemon.id} />
+       displayPokemon = pokemon.map(pokemon => {
+          return <Pokemon {...pokemon} key={pokemon.id} />
+       }
        );
      }
 

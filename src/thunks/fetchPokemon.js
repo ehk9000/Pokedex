@@ -1,4 +1,5 @@
 import { getPokemon, setLoading, setError} from '../actions/index';
+import { fetchPokemonCleaner } from '../Util/cleaner/cleaner';
 
 export const fetchPokemon = () => {
   return async (dispatch) => {
@@ -12,7 +13,8 @@ export const fetchPokemon = () => {
         throw Error(response.statusText);
       }
 
-      const pokemon = await response.json();
+      const dirtyPokemon = await response.json();
+      const pokemon = fetchPokemonCleaner(dirtyPokemon);
       dispatch(getPokemon(pokemon))
       dispatch(setLoading(false));
     } catch (error) {
