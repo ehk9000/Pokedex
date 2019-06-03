@@ -34,4 +34,30 @@ describe('PokemonContainer', () => {
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  describe('componentDidMount', () => {
+    fetchPokemon.mockImplementation(() => {});
+
+    it('should call fetchPokemon', () => {
+      expect(fetchPokemon).toHaveBeenCalled();
+    });
+  });
+
+  describe('mapStateToProps', () => {
+    const mockState = {pokemon: mockPokemon};
+    const expected = {pokemon: mockPokemon};
+    const mappedState = mapStateToProps(mockState);
+
+    expect(mappedState).toEqual(expected);
+  });
+
+  describe('mapDispatchToProps', () => {
+    const mockDispatch = jest.fn();
+    const props = mapDispatchToProps(mockDispatch);
+    const thunk = fetchPokemon();
+
+    props.fetchPokemon();
+
+    expect(mockDispatch).toHaveBeenCalledWith(thunk)
+  });
 });

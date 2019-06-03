@@ -7,8 +7,14 @@ describe('Pokemon', () => {
   let mockPokemon = {
     name: 'pikachu',
     type: 'electric',
-    sprites: {
+    images: {
       front_default: 'something.png'
+    },
+    stats: {
+      base_stat: 90,
+      stat: {
+        name: 'speed'
+      }
     },
     types: [
       {
@@ -17,8 +23,16 @@ describe('Pokemon', () => {
         }
       }
     ],
+    weight: 60,
+    abilities: [{
+      ability: {
+        name: 'lightning-rod'
+      }
+
+    }],
     id: 25
   }
+
   beforeEach(() => {
     wrapper = shallow( <Pokemon {...mockPokemon} key={mockPokemon.id}/> )
 
@@ -28,4 +42,5 @@ describe('Pokemon', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+  
 });

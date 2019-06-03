@@ -20,7 +20,6 @@ describe('pokemonReducer', () => {
     const expected = pokemonList;
     const action = actions.getPokemon(pokemonList);
     const result = pokemonReducer([], action);
-
     
     expect(result).toEqual(expected)
   });
