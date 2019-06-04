@@ -16,14 +16,18 @@ export class PokemonContainer extends Component {
    }
 
    assignDisplayPokemon = () => {
-     let { pokemon } = this.props
+     let { pokemon, isLoading } = this.props
      let displayPokemon;
 
-     if(pokemon.length) {
+     if(!isLoading) {
        displayPokemon = pokemon.map(pokemon => {
           return <Pokemon {...pokemon} key={pokemon.id} />
-       }
-       );
+       });
+     } else {
+       displayPokemon = 
+       <section>
+        <p>Loading...</p> 
+       </section>
      }
 
      return displayPokemon
@@ -39,8 +43,9 @@ export class PokemonContainer extends Component {
   }
 }
 
-export const mapStateToProps = ({ pokemon }) => ({
-  pokemon
+export const mapStateToProps = ({ pokemon, isLoading }) => ({
+  pokemon,
+  isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
