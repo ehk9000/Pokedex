@@ -8,7 +8,7 @@ jest.mock("../../thunks/fetchPokemon");
 describe('PokemonContainer', () => {
   let wrapper;
   let mockLocation;
-  let mockPokemon = {
+  let mockPokemon = [{
     name: 'pikachu',
     type: 'electric',
     sprites: {
@@ -22,7 +22,8 @@ describe('PokemonContainer', () => {
       }
     ],
     id: 25
-  }
+  }]
+
   beforeEach(() => {
     mockLocation = { pathname: '/'};
     wrapper = shallow( <PokemonContainer 
