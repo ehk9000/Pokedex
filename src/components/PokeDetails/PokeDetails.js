@@ -10,7 +10,12 @@ const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) =
           </ul>
       
   });
-  // let displayStats = stats.map()
+  let displayStats = stats.map(stat => {
+    return <ul>
+            <li>{stat.name}</li>
+            <li>{stat.base}</li>
+          </ul>
+  });
 
   return (
     <article>
@@ -21,6 +26,7 @@ const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) =
       {displayAbilities}
       <p>Weight: {weight}</p>
       <p>Height: {height}</p>
+      {displayStats}
     </article>
   )
 }
