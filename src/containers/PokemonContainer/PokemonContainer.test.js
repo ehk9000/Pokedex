@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PokemonContainer, mapStateToProps, mapDispatchToProps } from './PokemonContainer';
+import { PokemonContainer, mapStateToProps } from './PokemonContainer';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
 
 jest.mock("../../thunks/fetchPokemon");
@@ -27,7 +27,6 @@ describe('PokemonContainer', () => {
   beforeEach(() => {
     mockLocation = { pathname: '/'};
     wrapper = shallow( <PokemonContainer 
-      fetchPokemon={fetchPokemon}
       location={mockLocation}
       pokemon={mockPokemon}/> )
   });
@@ -36,13 +35,6 @@ describe('PokemonContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('componentDidMount', () => {
-    fetchPokemon.mockImplementation(() => {});
-
-    it('should call fetchPokemon', () => {
-      expect(fetchPokemon).toHaveBeenCalled();
-    });
-  });
 
   describe('mapStateToProps', () => {
     it('should return a props object with pokemon', () => {
@@ -52,15 +44,5 @@ describe('PokemonContainer', () => {
   
       expect(mappedState).toEqual(expected);
     });
-  });
-
-  describe('mapDispatchToProps', () => {
-    const mockDispatch = jest.fn();
-    const props = mapDispatchToProps(mockDispatch);
-    const thunk = fetchPokemon();
-
-    props.fetchPokemon();
-
-    expect(mockDispatch).toHaveBeenCalledWith(thunk)
   });
 });
