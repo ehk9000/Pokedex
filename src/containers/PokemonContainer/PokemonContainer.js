@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPokemon } from '../../thunks/fetchPokemon';
 import Pokemon from '../../components/Pokemon/Pokemon';
+import './PokemonContainer.scss';
 
 export class PokemonContainer extends Component {
    componentDidMount() {
      this.getPokemon ();
    }
 
-   getPokemon = () => {
+   getPokemon = async () => {
      for(let i = 1; i <= 100; i++) {
       let url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
-        this.props.fetchPokemon(url);
+        await this.props.fetchPokemon(url);
      }
    }
 
