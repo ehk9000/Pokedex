@@ -1,17 +1,14 @@
 export const fetchPokemonCleaner = (pokemonDetails) => {
-  const details = [];
-  details.push(pokemonDetails);
-  return details.map(pokemon => {
+  console.log(pokemonDetails,"details")
     let cleanedPokemon = {};
      cleanedPokemon = {
-      abilities: pokemon.abilities,
-      images: pokemon.sprites,
-      name: pokemon.name,
-      stats:pokemon.stats,
-      types: pokemon.types,
-      weight: pokemon.weight,
-      id:pokemon.id
+       abilities: pokemonDetails.abilities,
+      images: pokemonDetails.sprites,
+      name: pokemonDetails.name,
+      stats:pokemonDetails.stats,
+      types: pokemonDetails.types,
+      weight: pokemonDetails.weight,
+      id:pokemonDetails.id
     }
     return cleanedPokemon
-  });
 }

@@ -1,9 +1,8 @@
 import { getPokemon, setLoading, setError} from '../actions/index';
 import { fetchPokemonCleaner } from '../Util/cleaner/cleaner';
 
-export const fetchPokemon = () => {
+export const fetchPokemon = (url) => {
   return async (dispatch) => {
-    const url = 'https://pokeapi.co/api/v2/pokemon/25/';
     try {
       dispatch(setLoading(true));
 
@@ -14,7 +13,7 @@ export const fetchPokemon = () => {
       }
 
       const dirtyPokemon = await response.json();
-      const pokemon = fetchPokemonCleaner(dirtyPokemon);
+      const pokemon = await fetchPokemonCleaner(dirtyPokemon);      
       dispatch(getPokemon(pokemon))
       dispatch(setLoading(false));
     } catch (error) {
