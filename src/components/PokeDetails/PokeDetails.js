@@ -1,18 +1,26 @@
 import React from 'react';
 
 const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) => {
-  let typeName = types.map(type => {
-    return <p key={type.type.slot}>{type.type.name}</p>
+  let displayTypes = types.map(type => {
+    return <p>{type}</p>
   });
+  let displayAbilities = abilities.map(ability => {
+    return <ul>
+            <li>{ability}</li>
+          </ul>
+      
+  });
+  // let displayStats = stats.map()
+
   return (
     <article>
       <h3>{name}</h3>
       <img src={images.back} alt={`${name} back view`}/>
       <img src={images.front} alt={`${name} front view`}/>
-      {typeName}
-
-
-
+      {displayTypes}
+      {displayAbilities}
+      <p>Weight: {weight}</p>
+      <p>Height: {height}</p>
     </article>
   )
 }
