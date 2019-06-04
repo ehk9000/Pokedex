@@ -1,4 +1,5 @@
 import React from 'react';
+import './PokeDetails.scss';
 
 const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) => {
   let displayTypes = types.map(type => {
@@ -18,15 +19,17 @@ const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) =
   });
 
   return (
-    <article>
+    <article className="poke-details-wrapper">
       <h3>{name}</h3>
       <img src={images.back} alt={`${name} back view`}/>
       <img src={images.front} alt={`${name} front view`}/>
-      {displayTypes}
-      {displayAbilities}
-      <p>Weight: {weight}</p>
-      <p>Height: {height}</p>
-      {displayStats}
+      <section className="stats-wrapper">
+        {displayTypes}
+        {displayAbilities}
+        <p>Weight: {weight}</p>
+        <p>Height: {height}</p>
+        {displayStats}
+      </section>
     </article>
   )
 }

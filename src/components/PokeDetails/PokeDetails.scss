@@ -1,0 +1,14 @@
+li {
+  list-style-type: none;
+}
+
+.poke-details-wrapper {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.stats-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 400px;
+}
