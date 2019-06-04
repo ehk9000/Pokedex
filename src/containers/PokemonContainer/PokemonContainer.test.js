@@ -22,7 +22,7 @@ describe('PokemonContainer', () => {
       }
     ],
     id: 25
-  }]
+  }];
 
   beforeEach(() => {
     mockLocation = { pathname: '/'};
@@ -45,11 +45,13 @@ describe('PokemonContainer', () => {
   });
 
   describe('mapStateToProps', () => {
-    const mockState = {pokemon: mockPokemon};
-    const expected = {pokemon: mockPokemon};
-    const mappedState = mapStateToProps(mockState);
-
-    expect(mappedState).toEqual(expected);
+    it('should return a props object with pokemon', () => {
+      const mockState = {pokemon: mockPokemon, isLoading: false};
+      const expected = {pokemon: mockPokemon, isLoading: false};
+      const mappedState = mapStateToProps(mockState);
+  
+      expect(mappedState).toEqual(expected);
+    });
   });
 
   describe('mapDispatchToProps', () => {

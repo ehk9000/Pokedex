@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Controls from '../Controls/Controls';
+import Controls from '../../containers/Controls/Controls';
 
 
 
