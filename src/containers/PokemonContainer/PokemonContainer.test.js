@@ -10,17 +10,15 @@ describe('PokemonContainer', () => {
   let mockLocation;
   let mockPokemon = [{
     name: 'pikachu',
-    type: 'electric',
-    sprites: {
-      front_default: 'something.png'
+    types: ['electric'],
+    images: {
+      front: 'something.png',
+      back:'something.pgn'
     },
-    types: [
-      {
-        type: {
-          name: 'electric'
-        }
-      }
-    ],
+    stats: [{}],
+    weight:50,
+    height:40,
+    abilities:[''],
     id: 25
   }];
 
