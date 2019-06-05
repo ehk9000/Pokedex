@@ -14,7 +14,7 @@ export const fetchPokemon = (url) => {
 
       const dirtyPokemon = await response.json();
       const pokemon = await fetchPokemonCleaner(dirtyPokemon);      
-      dispatch(getPokemon(pokemon))
+      dispatch(getPokemon(pokemon));
       dispatch(setLoading(false));
     } catch (error) {
       dispatch(setError(error.message));
