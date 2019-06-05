@@ -1,4 +1,4 @@
-###PokeDex!
+### PokeDex
 
 ## Description: 
 A site to see first generation Pokemon, their abilities, and base stats.
