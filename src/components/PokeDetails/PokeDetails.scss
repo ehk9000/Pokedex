@@ -9,24 +9,33 @@ li {
   margin:0;
 }
 
+.details-flex {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
 .stats-wrapper {
   display: flex;
   flex-flow: row wrap;
   text-align: center;
-  width: 500px;
-  margin-left: 550px;
+  width: 600px;
   border: 2px red solid;
+  align-self: center;
 }
 
 .type-style {
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 .details-img {
   height: 300px;
 }
 
-.abilities-title {
-  padding-left: 20px;
+.details-header {
+  width:50%;
+}
 
+.height-style {
+  padding-left: 45px;
 }
