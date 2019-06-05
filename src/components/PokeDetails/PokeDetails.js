@@ -1,5 +1,6 @@
 import React from 'react';
 import './PokeDetails.scss';
+import { Link } from 'react-router-dom';
 
 const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) => {
   let displayTypes = types.map(type => {
@@ -15,32 +16,37 @@ const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) =
               <li>{stat.base}</li>
           </ul>
   });
-  
 
   return (
-    <article className="poke-details-wrapper">
-      <h2>{name}</h2>
-      <img src={images.back} alt={`${name} back view`} className="details-img"/>
-      <img src={images.front} alt={`${name} front view`} className="details-img"/>
-      <div className="details-flex">
-        <section className="stats-wrapper">
-          <h3 className="details-header">Type:</h3>
-          <ul>
-            {displayTypes}  
-          </ul>
-          <h3 className="details-header">Abilities:</h3>
-          <ul>
-            {displayAbilities}
-          </ul>
-          <ul>
-            <li>Weight: {weight}</li>
-            <li className="height-style">Height: {height}</li>
-          </ul>
-            {displayStats}
-        </section>
+    <section>
+        <Link to="/" className="back-btn">
+          ◀ BACK
+        </Link>
+      <article className="poke-details-wrapper">
+        <h2>{name}</h2>
+        <img src={images.back} alt={`${name} back view`} className="details-img"/>
+        <img src={images.front} alt={`${name} front view`} className="details-img"/>
+        <div className="details-flex">
+          <section className="stats-wrapper">
+            <h3 className="details-header">Type:</h3>
+            <ul>
+              {displayTypes}  
+            </ul>
+            <h3 className="details-header">Abilities:</h3>
+            <ul>
+              {displayAbilities}
+            </ul>
+            <ul>
+              <li>Weight: {weight}</li>
+              <li className="height-style">Height: {height}</li>
+            </ul>
+              {displayStats}
+          </section>
 
-      </div>
-    </article>
+        </div>
+      </article>
+
+    </section>
   )
 }
 
