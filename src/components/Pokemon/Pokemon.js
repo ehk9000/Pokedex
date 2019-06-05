@@ -9,14 +9,14 @@ export const Pokemon = (props) => {
   });
 
   return (
-    <Link to={`/pokemon/${id}`} key={id}>
+    <Link to={`/pokemon/${id}`} key={id} className="card-link-styles">
       <article className="poke-card">
         <h3>{name}</h3>
         <img src={images.front} alt="pokemon"/>
         {typeName}
       </article>
     </Link>
-  )
+  );
 }
 
 export default Pokemon;

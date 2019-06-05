@@ -1,14 +1,32 @@
 li {
   list-style-type: none;
+  display: inline-block;
 }
 
 .poke-details-wrapper {
   text-transform: capitalize;
   text-align: center;
+  margin:0;
 }
 
 .stats-wrapper {
   display: flex;
   flex-flow: row wrap;
-  max-width: 400px;
+  text-align: center;
+  width: 500px;
+  margin-left: 550px;
+  border: 2px red solid;
+}
+
+.type-style {
+  margin-left: 5px;
+}
+
+.details-img {
+  height: 300px;
+}
+
+.abilities-title {
+  padding-left: 20px;
+
 }
