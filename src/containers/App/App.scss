@@ -2,13 +2,18 @@ body {
   font-family: 'pokemon-font', monospace;
   background-color: #98FB98;
   color:#3B4CCA;
+  height: 100%;
 }
 
 h2 {
   margin-left: 50px;
+  margin-top: 0;
 }
 
 .header-logo {
   height:100px;
-  margin-bottom: 50px;
+}
+
+header {
+  height: 120px;
 }

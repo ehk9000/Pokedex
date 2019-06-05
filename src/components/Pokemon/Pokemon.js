@@ -5,7 +5,7 @@ import { Link }  from 'react-router-dom';
 export const Pokemon = (props) => {
   let { name, images, types, id} = props;
   let typeName = types.map(type => {
-    return <p>{type}</p>
+    return <li className="type-style-container">{type}</li>
   });
 
   return (
@@ -13,7 +13,9 @@ export const Pokemon = (props) => {
       <article className="poke-card">
         <h3>{name}</h3>
         <img src={images.front} alt="pokemon"/>
-        {typeName}
+        <ul className="type-ul">
+          {typeName}  
+        </ul>
       </article>
     </Link>
   );

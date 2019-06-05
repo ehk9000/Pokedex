@@ -19,9 +19,9 @@ const PokeDetails = ({ name, images, abilities, stats, types, weight, height}) =
 
   return (
     <section>
-        <Link to="/" className="back-btn">
-          ◀ BACK
-        </Link>
+      <Link to="/" className="back-btn">
+        ◀ BACK
+      </Link>
       <article className="poke-details-wrapper">
         <h2>{name}</h2>
         <img src={images.back} alt={`${name} back view`} className="details-img"/>
