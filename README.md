@@ -1,4 +1,4 @@
-### PokeDex
+## PokeDex
 
 ## Description: 
 A site to see first generation Pokemon, their abilities, and base stats.
@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 [![image-from-ios.jpg](https://i.postimg.cc/gkLcfzKB/image-from-ios.jpg)](https://postimg.cc/CzYV8VXj)
 
 
-##ScreenShots
+## ScreenShots
 [![Screen-Shot-2019-06-04-at-10-03-47-PM.png](https://i.postimg.cc/TYNmc337/Screen-Shot-2019-06-04-at-10-03-47-PM.png)](https://postimg.cc/BXDXSsDH)
 
 [![Screen-Shot-2019-06-04-at-10-03-57-PM.png](https://i.postimg.cc/ZRJCSGqv/Screen-Shot-2019-06-04-at-10-03-57-PM.png)](https://postimg.cc/bGFz0Fkq)
